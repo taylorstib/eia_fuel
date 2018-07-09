@@ -2,11 +2,11 @@
 require 'faraday'
 
 # Version
-require "eia_fuel/version"
+require_relative "./eia_fuel/version"
 
 # lib
-require 'eia_fuel/client'
-require 'eia_fuel/series'
+require_relative './eia_fuel/client'
+require_relative './eia_fuel/series'
 
 module EiaFuel
   @base_url = 'http://api.eia.gov'
