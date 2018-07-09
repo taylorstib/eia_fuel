@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = "Wrapper for the eia.gov fuel prices API"
   spec.description   = "API interface for fetching data published by the US EIA."
-  spec.homepage      = "https://github.com/taylorstib"
+  spec.homepage      = "https://github.com/taylorstib/eia_fuel"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
