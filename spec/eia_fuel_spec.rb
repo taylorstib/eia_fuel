@@ -1,9 +1,31 @@
 RSpec.describe EiaFuel do
-  it "has a version number" do
-    expect(EiaFuel::VERSION).not_to be nil
+  describe ".base_url" do
+    after :each do
+      EiaFuel.base_url = 'http://api.eia.gov'
+    end
+
+    it "should return 'http://api.eia.gov'" do
+      expect(EiaFuel.base_url).to eq('http://api.eia.gov')
+    end
+
+    it "allows setting the base_url to a new value" do
+      EiaFuel.base_url = 'http://example.com'
+      expect(EiaFuel.base_url).to eq('http://example.com')
+    end
   end
 
-  it "does something useful" do
-    expect(false).to eq(true)
+  describe ".api_key" do
+    after :each do
+      EiaFuel.api_key = nil
+    end
+
+    it "returns the api_key" do
+      expect(EiaFuel.api_key).to be_nil
+    end
+
+    it "allows setting the api_key" do
+      EiaFuel.api_key = 'sample'
+      expect(EiaFuel.api_key).to eq('sample')
+    end
   end
 end
